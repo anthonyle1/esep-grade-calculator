@@ -116,3 +116,88 @@ func TestEssayAssignment(t *testing.T) {
 	}
 
 }
+
+func TestPassA(t *testing.T) {
+	expected_value := "Pass"
+
+	gradeCalculator := NewGradeCalculator()
+
+	gradeCalculator.AddGrade("open source assignment", 100, Assignment)
+	gradeCalculator.AddGrade("exam 1", 95, Exam)
+	gradeCalculator.AddGrade("essay on ai ethics", 90, Essay)
+
+	actual_value := gradeCalculator.GetFinalPassFail()
+
+	if expected_value != actual_value {
+		t.Errorf("Expected GetPassFail to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+
+}
+
+func TestPassB(t *testing.T) {
+	expected_value := "Pass"
+
+	gradeCalculator := NewGradeCalculator()
+
+	gradeCalculator.AddGrade("open source assignment", 89, Assignment)
+	gradeCalculator.AddGrade("exam 1", 85, Exam)
+	gradeCalculator.AddGrade("essay on ai ethics", 80, Essay)
+
+	actual_value := gradeCalculator.GetFinalPassFail()
+
+	if expected_value != actual_value {
+		t.Errorf("Expected GetPassFail to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+
+}
+
+func TestPassC(t *testing.T) {
+	expected_value := "Pass"
+
+	gradeCalculator := NewGradeCalculator()
+
+	gradeCalculator.AddGrade("open source assignment", 79, Assignment)
+	gradeCalculator.AddGrade("exam 1", 75, Exam)
+	gradeCalculator.AddGrade("essay on ai ethics", 70, Essay)
+
+	actual_value := gradeCalculator.GetFinalPassFail()
+
+	if expected_value != actual_value {
+		t.Errorf("Expected GetPassFail to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+
+}
+
+func TestPassD(t *testing.T) {
+	expected_value := "Fail"
+
+	gradeCalculator := NewGradeCalculator()
+
+	gradeCalculator.AddGrade("open source assignment", 67, Assignment)
+	gradeCalculator.AddGrade("exam 1", 64, Exam)
+	gradeCalculator.AddGrade("essay on ai ethics", 60, Essay)
+
+	actual_value := gradeCalculator.GetFinalPassFail()
+
+	if expected_value != actual_value {
+		t.Errorf("Expected GetPassFail to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+
+}
+
+func TestPassF(t *testing.T) {
+	expected_value := "Fail"
+
+	gradeCalculator := NewGradeCalculator()
+
+	gradeCalculator.AddGrade("open source assignment", 59, Assignment)
+	gradeCalculator.AddGrade("exam 1", 55, Exam)
+	gradeCalculator.AddGrade("essay on ai ethics", 50, Essay)
+
+	actual_value := gradeCalculator.GetFinalPassFail()
+
+	if expected_value != actual_value {
+		t.Errorf("Expected GetPassFail to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+
+}
